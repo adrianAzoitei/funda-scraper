@@ -10,7 +10,7 @@ on:
     branches: [ "develop" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -40,3 +40,10 @@ jobs:
     - name: Scrape
       run: |
         python main.py
+    - name: Commit report
+      run: |
+        git config --global user.name 'Scrape Bot'
+        git config --global user.email 'scrapebot@pryingbee.com'
+        git add README.md
+        git commit -m "scrape report for today"
+        git push
