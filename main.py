@@ -11,19 +11,18 @@ if __name__ == '__main__':
           area=area, 
           property_type="house",
           exterior_space_type="garden",
+          garden_orientation="south,west",
           want_to=WANT_TO, 
           n_pages=2,
           max_price=MAX_PRICE
           )
-        df = scraper_available.run(raw_data=False).drop([
-           "house_id", 
-           "building_type",
-           "price_m2",
-           "living_area",
-           "zip",
-           "year_built",
-           "photo", 
-           "descrip"
-           ], 
-           axis=1)
+        df = scraper_available.run(raw_data=False)
+        df = df[[
+          "address",
+          "price",
+          "energy_label",
+          "bedroom",
+          "city",
+          "house_age"
+        ]]
         readme.write(df.to_markdown())

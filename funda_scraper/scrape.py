@@ -33,11 +33,13 @@ class FundaScraper(object):
         max_price: Optional[int] = None,
         property_type: Optional[str] = None,
         exterior_space_type: Optional[str] = None,
+        garden_orientation: Optional[str] = None,
     ):
         # Init attributes
         self.area = area.lower().replace(" ", "-")
         self.property_type = property_type
         self.exterior_space_type = exterior_space_type
+        self.garden_orientation = garden_orientation
         self.want_to = want_to
         self.find_past = find_past
         self.page_start = max(page_start, 1)
@@ -96,6 +98,7 @@ class FundaScraper(object):
         area: Optional[str] = None,
         property_type: Optional[str] = None,
         exterior_space_type: Optional[str] = None,
+        garden_orientation: Optional[str] = None,
         want_to: Optional[str] = None,
         page_start: Optional[int] = None,
         n_pages: Optional[int] = None,
@@ -110,6 +113,8 @@ class FundaScraper(object):
             self.property_type = property_type
         if exterior_space_type is not None:
             self.exterior_space_type = exterior_space_type
+        if garden_orientation is not None:
+            self.garden_orientation = garden_orientation
         if want_to is not None:
             self.want_to = want_to
         if page_start is not None:
@@ -164,6 +169,11 @@ class FundaScraper(object):
             exterior_space_types = self.exterior_space_type.split(',')
             formatted_exterior_space_types = ['%22' + space_type + '%22' for space_type in exterior_space_types]
             main_url += f"&exterior_space_type=%5B{','.join(formatted_exterior_space_types)}%5D"
+        
+        if self.garden_orientation:
+            orientations = self.garden_orientation.split(',')
+            formatted_orientations = ['%22' + orientation + '%22' for orientation in orientations]
+            main_url += f"&exterior_space_garden_orientation=%5B{','.join(formatted_orientations)}%5D"
 
         if self.find_past:
             main_url = f"{main_url}&availability=%22unavailable%22"
