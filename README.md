@@ -1,17 +1,32 @@
-|    |   house_id | city                       | house_type   | building_type   |   price |   price_m2 |   room |   bedroom |   bathroom |   living_area | energy_label   |   zip | address                               |   year_built |   house_age |
-|---:|-----------:|:---------------------------|:-------------|:----------------|--------:|-----------:|-------:|----------:|-----------:|--------------:|:---------------|------:|:--------------------------------------|-------------:|------------:|
-|  0 |   43481026 | zwijndrecht                | huis         | Bestaande bouw  |  279500 |     3071.4 |      4 |         2 |          1 |            91 | F              |  3331 | Adolph van Nassaustraat 3             |         1938 |          86 |
-|  1 |   43481836 | schiedam                   | huis         | Bestaande bouw  |  450000 |     3600   |      5 |         4 |          1 |           125 | C              |  3118 | Burgemeester Honnerlage Gretelaan 397 |         1989 |          35 |
-|  2 |   43481263 | naaldwijk                  | huis         | Bestaande bouw  |  450000 |     4245.3 |      5 |         4 |          1 |           106 | C              |  2672 | Ruys de Beerenbrouckstraat 3          |         1986 |          38 |
-|  3 |   43481430 | nieuwerkerk-aan-den-ijssel | huis         | Bestaande bouw  |  400000 |     3960.4 |      5 |         4 |          1 |           101 | C              |  2914 | Zwanendaal 57                         |         1980 |          44 |
-|  4 |   43480307 | zoetermeer                 | huis         | Bestaande bouw  |  425000 |     3899.1 |      5 |         4 |          1 |           109 | A              |  2718 | Roomwit 35                            |         1989 |          35 |
-|  5 |   43482776 | lekkerkerk                 | huis         | Bestaande bouw  |  359000 |     3324.1 |      5 |         3 |          1 |           108 | B              |  2941 | De Elzen 71                           |         1981 |          43 |
-|  6 |   43481306 | nieuw-beijerland           | huis         | Bestaande bouw  |  319500 |     3132.4 |      5 |         4 |          1 |           102 | C              |  3264 | van Oldenbarneveldstraat 13           |         1968 |          56 |
-|  7 |   43481748 | bergambacht                | huis         | Bestaande bouw  |  395000 |     3495.6 |      7 |         5 |          1 |           113 | C              |  2861 | Dr Albert Schweitzerstraat 31         |         1972 |          52 |
-|  8 |   43480342 | schiedam                   | huis         | Bestaande bouw  |  279500 |     2973.4 |      4 |         3 |          1 |            94 | A              |  3114 | Zalmstraat 17                         |         1872 |         152 |
-|  9 |   43481345 | spijkenisse                | huis         | Bestaande bouw  |  315000 |     2739.1 |      5 |         4 |          1 |           115 | C              |  3205 | Ottersveen 247                        |         1973 |          51 |
-| 10 |   43482401 | alphen-aan-den-rijn        | huis         | Bestaande bouw  |  390000 |     2954.5 |      6 |         5 |          1 |           132 | A              |  2401 | Volkerak 71                           |         1971 |          53 |
-| 11 |   43481133 | hoogvliet-rotterdam        | huis         | Bestaande bouw  |  449500 |     2791.9 |      5 |         4 |          1 |           161 | A              |  3192 | Ondersim 127                          |         2005 |          19 |
-| 12 |   43481187 | vlaardingen                | huis         | Bestaande bouw  |  419000 |     3809.1 |      4 |         3 |          1 |           110 | C              |  3135 | Prins Hendriklaan 63                  |         1938 |          86 |
-| 13 |   43480355 | zoetermeer                 | huis         | Bestaande bouw  |  375000 |     2952.8 |      5 |         4 |          1 |           127 | C              |  2717 | Django Reinhardtrode 26               |         1979 |          45 |
-| 14 |   43482527 | rotterdam                  | huis         | Bestaande bouw  |  375000 |     3440.4 |      5 |         4 |          1 |           109 | C              |  3068 | Ivoordistel 32                        |         1973 |          51 |
+|    | city                       | house_type   |   price |   room |   bedroom |   bathroom | energy_label   | address                               |   house_age |
+|---:|:---------------------------|:-------------|--------:|-------:|----------:|-----------:|:---------------|:--------------------------------------|------------:|
+|  0 | bodegraven                 | huis         |  350000 |      3 |         2 |          1 | B              | Prinsenstraat 76                      |          98 |
+|  1 | naaldwijk                  | huis         |  450000 |      5 |         4 |          1 | C              | Ruys de Beerenbrouckstraat 3          |          38 |
+|  2 | lekkerkerk                 | huis         |  359000 |      5 |         3 |          1 | B              | De Elzen 71                           |          43 |
+|  3 | schiedam                   | huis         |  279500 |      4 |         3 |          1 | A              | Zalmstraat 17                         |         152 |
+|  4 | puttershoek                | huis         |  350000 |      5 |         4 |          1 | C              | Sterrenlaan 81                        |          52 |
+|  5 | rotterdam                  | huis         |  300000 |      4 |         3 |          1 | A              | Kadoelermeer 17                       |          38 |
+|  6 | rotterdam                  | huis         |  375000 |      5 |         4 |          1 | C              | Ivoordistel 32                        |          51 |
+|  7 | vlaardingen                | huis         |  419000 |      4 |         3 |          1 | C              | Prins Hendriklaan 63                  |          86 |
+|  8 | zoetermeer                 | huis         |  425000 |      5 |         4 |          1 | A              | Roomwit 35                            |          35 |
+|  9 | spijkenisse                | huis         |  325000 |      6 |         4 |          1 | B              | Ida Liefrinckstraat 3                 |          28 |
+| 10 | oud-beijerland             | huis         |  338500 |      4 |         3 |          1 | C              | Emmastraat 26                         |          94 |
+| 11 | spijkenisse                | huis         |  315000 |      5 |         4 |          1 | C              | Ottersveen 247                        |          51 |
+| 12 | zwijndrecht                | huis         |  279500 |      4 |         2 |          1 | F              | Adolph van Nassaustraat 3             |          86 |
+| 13 | hoogvliet-rotterdam        | huis         |  339500 |      4 |         3 |          1 | >A+            | Meeuwenwetering 29                    |          70 |
+| 14 | boskoop                    | huis         |  330000 |      5 |         4 |          1 | C              | Dokter Hamburgerlaan 43               |          57 |
+| 15 | rotterdam                  | huis         |  389000 |      5 |         4 |          1 | D              | Châlonsstraat 15                      |          95 |
+| 16 | schiedam                   | huis         |  450000 |      5 |         4 |          1 | C              | Burgemeester Honnerlage Gretelaan 397 |          35 |
+| 17 | alphen-aan-den-rijn        | huis         |  400000 |      6 |         5 |          1 | C              | Grevelingen 85                        |          53 |
+| 18 | nieuwerkerk-aan-den-ijssel | huis         |  400000 |      5 |         4 |          1 | C              | Zwanendaal 57                         |          44 |
+| 19 | nieuw-beijerland           | huis         |  319500 |      5 |         4 |          1 | C              | van Oldenbarneveldstraat 13           |          56 |
+| 20 | rotterdam                  | huis         |  415000 |      5 |         4 |          1 | B              | Balsemkruid 89                        |          59 |
+| 21 | warmond                    | huis         |  425000 |      4 |         2 |          1 | C              | Burgemeester Ketelaarstraat 28        |          89 |
+| 22 | oud-beijerland             | huis         |  295000 |      4 |         3 |          1 | D              | Asterstraat 45                        |          61 |
+| 23 | haastrecht                 | huis         |  375000 |      5 |         4 |          1 | C              | Boterbloem 10                         |          45 |
+| 24 | hoogvliet-rotterdam        | huis         |  449500 |      5 |         4 |          1 | A              | Ondersim 127                          |          19 |
+| 25 | bergambacht                | huis         |  395000 |      7 |         5 |          1 | C              | Dr Albert Schweitzerstraat 31         |          52 |
+| 26 | schiedam                   | huis         |  395000 |      5 |         4 |          1 | A              | Burgemeester Honnerlage Gretehof 1    |          29 |
+| 27 | zoetermeer                 | huis         |  375000 |      5 |         4 |          1 | C              | Django Reinhardtrode 26               |          45 |
+| 28 | alphen-aan-den-rijn        | huis         |  390000 |      6 |         5 |          1 | A              | Volkerak 71                           |          53 |
+| 29 | barendrecht                | huis         |  375000 |      4 |         3 |          1 | B              | Arent Maertensvliet 81                |          37 |
