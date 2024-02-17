@@ -1,88 +1,17 @@
-# FundaScraper
-
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Build Status](https://app.travis-ci.com/whchien/funda-scraper.svg?branch=main)](https://app.travis-ci.com/whchien/funda-scraper)
-[![codecov](https://codecov.io/gh/whchien/funda-scraper/branch/main/graph/badge.svg?token=QUKTDyeUqp)](https://codecov.io/gh/whchien/funda-scraper)
-[![Downloads](https://static.pepy.tech/badge/funda-scraper)](https://pepy.tech/project/funda-scraper)
-[![PyPI version](https://img.shields.io/pypi/v/funda-scraper)](https://pypi.org/project/funda-scraper/)
-[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
-
-`FundaScaper` provides you the easiest way to perform web scraping from Funda, the Dutch housing website. 
-You can find houses either for sale or for rent, and the historical data from the past few year are also attainable.
-
-Please note:
-1. Scraping this website is only allowed for personal use (as per Funda's Terms and Conditions).
-2. Any commercial use of this Python package is prohibited. The author holds no liability for any misuse of the package.
-
-
-## Install
-1. The easiest way is to install with pip:
-```
-pip install funda-scraper
-```
-2. You can also clone the repository to your local machine with:
-```
-git clone https://github.com/whchien/funda-scraper.git
-cd funda-scraper
-export PYTHONPATH=${PWD}
-python funda_scraper/scrape.py --area amsterdam --want_to rent --find_past False --page_start 1 --n_pages 3
-```
-
-## Quickstart 
-```
-from funda_scraper import FundaScraper
-
-scraper = FundaScraper(area="amsterdam", want_to="rent", find_past=False, page_start=1, n_pages=3)
-df = scraper.run(raw_data=False, save=True, filepath="test.csv", min_price=500, max_price=2000)
-df.head()
-```
-![image](https://i.imgur.com/mmN9mjQ.png)
-
-
-You can pass several arguments to `FundaScraper()` for customized scraping:
-- `area`: Specify the city or specific area you want to look for, e.g. Amsterdam, Utrecht, Rotterdam, etc
-- `want_to`: You can choose either `buy` or `rent`, which finds houses either for sale or for rent. 
-- `find_past`: Specify whether you want to find the data in the past or the ones in the market. If `True`, only historical data will be scraped. The default is `False`.
-- `page_start`: Indicate which page you want to start scraping. The default is `1`. 
-- `n_pages`: Indicate how many page you want to scrape. The default is `1`. 
-- `min_price`: Indicate the lowest amount for the budget
-- `max_price`: Indicate the highest amount for the budget
-
-The scraped raw result contains following information:
-- url
-- price
-- address
-- description
-- listed_since
-- zip_code 
-- size
-- year_built
-- living_area
-- kind_of_house
-- building_type
-- num_of_rooms
-- num_of_bathrooms
-- layout
-- energy_label
-- insulation
-- heating
-- ownership
-- exteriors
-- parking
-- neighborhood_name
-- date_list
-- date_sold
-- term
-- price_sold
-- last_ask_price
-- last_ask_price_m2
-- city
-
-You can use `scraper.run(raw_data=True)` to fetch the data without preprocessing.
-
-## More information
-
-You can check the [example notebook](https://colab.research.google.com/drive/1hNzJJRWxD59lrbeDpfY1OUpBz0NktmfW?usp=sharing) for further details. 
-Please give me a [star](https://github.com/whchien/funda-scraper) if you find this project helpful. 
-
-
+|    |   house_id | city                       | house_type   | building_type   |   price |   price_m2 |   room |   bedroom |   bathroom |   living_area | energy_label   |   zip | address                               |   year_built |   house_age |
+|---:|-----------:|:---------------------------|:-------------|:----------------|--------:|-----------:|-------:|----------:|-----------:|--------------:|:---------------|------:|:--------------------------------------|-------------:|------------:|
+|  0 |   43480355 | zoetermeer                 | huis         | Bestaande bouw  |  375000 |     2952.8 |      5 |         4 |          1 |           127 | C              |  2717 | Django Reinhardtrode 26               |         1979 |          45 |
+|  1 |   43481133 | hoogvliet-rotterdam        | huis         | Bestaande bouw  |  449500 |     2791.9 |      5 |         4 |          1 |           161 | A              |  3192 | Ondersim 127                          |         2005 |          19 |
+|  2 |   43480307 | zoetermeer                 | huis         | Bestaande bouw  |  425000 |     3899.1 |      5 |         4 |          1 |           109 | A              |  2718 | Roomwit 35                            |         1989 |          35 |
+|  3 |   43481345 | spijkenisse                | huis         | Bestaande bouw  |  315000 |     2739.1 |      5 |         4 |          1 |           115 | C              |  3205 | Ottersveen 247                        |         1973 |          51 |
+|  4 |   43481430 | nieuwerkerk-aan-den-ijssel | huis         | Bestaande bouw  |  400000 |     3960.4 |      5 |         4 |          1 |           101 | C              |  2914 | Zwanendaal 57                         |         1980 |          44 |
+|  5 |   43481187 | vlaardingen                | huis         | Bestaande bouw  |  419000 |     3809.1 |      4 |         3 |          1 |           110 | C              |  3135 | Prins Hendriklaan 63                  |         1938 |          86 |
+|  6 |   43481026 | zwijndrecht                | huis         | Bestaande bouw  |  279500 |     3071.4 |      4 |         2 |          1 |            91 | F              |  3331 | Adolph van Nassaustraat 3             |         1938 |          86 |
+|  7 |   43481263 | naaldwijk                  | huis         | Bestaande bouw  |  450000 |     4245.3 |      5 |         4 |          1 |           106 | C              |  2672 | Ruys de Beerenbrouckstraat 3          |         1986 |          38 |
+|  8 |   43482776 | lekkerkerk                 | huis         | Bestaande bouw  |  359000 |     3324.1 |      5 |         3 |          1 |           108 | B              |  2941 | De Elzen 71                           |         1981 |          43 |
+|  9 |   43481836 | schiedam                   | huis         | Bestaande bouw  |  450000 |     3600   |      5 |         4 |          1 |           125 | C              |  3118 | Burgemeester Honnerlage Gretelaan 397 |         1989 |          35 |
+| 10 |   43482527 | rotterdam                  | huis         | Bestaande bouw  |  375000 |     3440.4 |      5 |         4 |          1 |           109 | C              |  3068 | Ivoordistel 32                        |         1973 |          51 |
+| 11 |   43482401 | alphen-aan-den-rijn        | huis         | Bestaande bouw  |  390000 |     2954.5 |      6 |         5 |          1 |           132 | A              |  2401 | Volkerak 71                           |         1971 |          53 |
+| 12 |   43480342 | schiedam                   | huis         | Bestaande bouw  |  279500 |     2973.4 |      4 |         3 |          1 |            94 | A              |  3114 | Zalmstraat 17                         |         1872 |         152 |
+| 13 |   43481748 | bergambacht                | huis         | Bestaande bouw  |  395000 |     3495.6 |      7 |         5 |          1 |           113 | C              |  2861 | Dr Albert Schweitzerstraat 31         |         1972 |          52 |
+| 14 |   43481306 | nieuw-beijerland           | huis         | Bestaande bouw  |  319500 |     3132.4 |      5 |         4 |          1 |           102 | C              |  3264 | van Oldenbarneveldstraat 13           |         1968 |          56 |
