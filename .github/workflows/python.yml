@@ -37,3 +37,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest tests
+    - name: Scrape
+      run: |
+        python main.py
