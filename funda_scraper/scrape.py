@@ -13,7 +13,7 @@ from tqdm import tqdm
 from tqdm.contrib.concurrent import process_map
 
 from funda_scraper.config.core import config
-from funda_scraper.preprocess import clean_list_date, preprocess_data
+from funda_scraper.preprocess import preprocess_data
 from funda_scraper.utils import logger
 
 

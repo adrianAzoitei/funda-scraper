@@ -1,8 +1,11 @@
 from funda_scraper import FundaScraper
+from sheets import GoogleSheetsClient
 
 AREAS = ["delft,30km"]
 MAX_PRICE = 450000
 WANT_TO="buy"
+
+sheets_client = GoogleSheetsClient()
 
 if __name__ == '__main__':
     with open('README.md', 'w+') as readme:
@@ -26,3 +29,4 @@ if __name__ == '__main__':
           "house_age"
         ]]
         readme.write(df.to_markdown())
+        sheets_client.update(df)

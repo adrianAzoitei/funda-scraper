@@ -41,6 +41,9 @@ jobs:
       run: |
         pytest tests
     - name: Scrape
+      env:
+        SERVICE_ACCOUNT_TOKEN: ${{ secrets.SHEETS_SERVICE_ACCOUNT_TOKEN }}
+        SHEET_ID: ${{ secrets.SHEET_ID }}
       run: |
         python main.py
     - name: Commit report

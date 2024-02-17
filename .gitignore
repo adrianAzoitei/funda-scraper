@@ -2,3 +2,4 @@ lib/
 bin/
 *.egg-info
 *.cfg
+.env.local
