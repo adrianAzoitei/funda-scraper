@@ -11,8 +11,18 @@ if __name__ == '__main__':
           area=area, 
           property_type="house",
           want_to=WANT_TO, 
-          n_pages=1,
+          n_pages=2,
           max_price=MAX_PRICE
           )
-        df = scraper_available.run(raw_data=False).drop(["photo", "descrip"], axis=1)
+        df = scraper_available.run(raw_data=False).drop([
+           "house_id", 
+           "building_type",
+           "price_m2",
+           "living_area",
+           "zip",
+           "year_built",
+           "photo", 
+           "descrip"
+           ], 
+           axis=1)
         readme.write(df.to_markdown())
