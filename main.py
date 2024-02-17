@@ -26,7 +26,8 @@ if __name__ == '__main__':
           "energy_label",
           "bedroom",
           "city",
-          "house_age"
+          "house_age",
+          "house_id"
         ]]
         readme.write(df.to_markdown())
         sheets_client.update(df)

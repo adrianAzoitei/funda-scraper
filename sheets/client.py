@@ -70,7 +70,7 @@ class GoogleSheetsClient(object):
                 if row["address"] not in addresses:
                     values = [
                         [
-                            row["address"],
+                            f"=HYPERLINK(\"https://www.funda.nl/koop/{row['city']}/huis-{row['house_id']}-{row['address'].lower().replace(' ', '-')}/\"; \"{row['address']}\")",
                             row["price"],
                             "Beschikbaar",
                             row["energy_label"],
