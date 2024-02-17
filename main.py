@@ -10,6 +10,7 @@ if __name__ == '__main__':
         scraper_available = FundaScraper(
           area=area, 
           property_type="house",
+          exterior_space_type="garden",
           want_to=WANT_TO, 
           n_pages=2,
           max_price=MAX_PRICE
