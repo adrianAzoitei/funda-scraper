@@ -1,7 +1,7 @@
 from funda_scraper import FundaScraper
 from sheets import GoogleSheetsClient
 
-AREAS = ["delft,30km"]
+AREAS = ["delft,15km"]
 MAX_PRICE = 450000
 WANT_TO="buy"
 
