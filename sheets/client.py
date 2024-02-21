@@ -74,6 +74,7 @@ class GoogleSheetsClient(object):
                             row["price"],
                             "Beschikbaar",
                             row["energy_label"],
+                            "=TODAY()",
                             row["city"].capitalize().replace("-", " ")
                         ],
                     ]
