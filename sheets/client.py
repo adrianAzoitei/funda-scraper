@@ -7,6 +7,7 @@ from googleapiclient.errors import HttpError
 import sys
 from pandas import DataFrame
 import json
+import datetime
 
 class GoogleSheetsClient(object):
     def __init__(self):
@@ -74,7 +75,7 @@ class GoogleSheetsClient(object):
                             row["price"],
                             "Beschikbaar",
                             row["energy_label"],
-                            "=TODAY()",
+                            datetime.today().strftime('%d-%m-%Y'),
                             row["city"].capitalize().replace("-", " ")
                         ],
                     ]
