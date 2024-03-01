@@ -1,7 +1,7 @@
 from funda_scraper import FundaScraper
 from sheets import GoogleSheetsClient
 
-AREAS = ["delft,15km"]
+AREAS = ["delft,10km"]
 MAX_PRICE = 450000
 WANT_TO="buy"
 
@@ -16,7 +16,7 @@ if __name__ == '__main__':
           exterior_space_type="garden",
           garden_orientation="south,west",
           want_to=WANT_TO, 
-          n_pages=2,
+          n_pages=4,
           max_price=MAX_PRICE
           )
         df = scraper_available.run(raw_data=False)
